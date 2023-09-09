@@ -1,6 +1,6 @@
 {
   "name": "auto-mkvmerge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./dist/index.js",
   "author": "NekoChanTaiwan <aaron74327@gmail.com>",
   "license": "MIT",

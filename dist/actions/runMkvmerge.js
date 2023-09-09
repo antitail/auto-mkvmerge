@@ -14,7 +14,8 @@ const runMkvmerge = (neko) => {
         const audioName = neko.audiosName.find(audio => video.replace(neko.videoExt, '') === audio.replace(config_1.config.audioExt, '')); // 返回與當前影片跟某個音軌同名，返回該音軌檔名否則返回 undefined
         const audioCmd = audioName ? `--language 1:ja "${path_1.resolve(neko.basePath, audioName)}"` : ''; // 音軌路徑
         try {
-            child_process_1.execSync(`mkvmerge -o "${outputPath}" "${videoPath}" ${neko.fontsCmd} ${subtitleCmd} ${audioCmd} --track-order 0:0,0:1`);
+            const fontsPath = neko.fontsCmd ? neko.fontsCmd : ""
+            child_process_1.execSync(`mkvmerge -o "${outputPath}" "${videoPath}" ${fontsPath} ${subtitleCmd} ${audioCmd} --track-order 0:0,0:1`);
         }
         catch (error) {
             console.log(error);
